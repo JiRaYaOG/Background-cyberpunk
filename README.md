@@ -73,6 +73,7 @@ Ce projet fait partie d’une série de 5 projets futuristes visant à explorer 
 📜 Licence
 Ce projet est distribué sous licence MIT — libre à toi de le modifier, l’améliorer et le réutiliser à ta façon ✨
 
+
 👨‍💻 Auteur : JiRaYaOG
 📅 Année : 2025
 🎨 “Le futur appartient à ceux qui le stylisent.”
