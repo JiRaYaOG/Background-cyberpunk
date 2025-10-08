@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+/* Police + base */
 body {
   font-family: 'Orbitron', sans-serif;
   margin: 0;
@@ -7,14 +6,15 @@ body {
   color: #fff;
   text-align: center;
   overflow: hidden;
+  background: #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #000;
 }
 
+/* Fond animé */
 #bg-canvas {
   position: fixed;
   top: 0;
@@ -24,34 +24,91 @@ body {
   z-index: -1;
 }
 
+/* Titres néon avec effet glitch */
 .neon-title {
   font-size: 3em;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #ff0, 0 0 20px #f0f;
+  color: #fff;
+  text-shadow: 0 0 8px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+  animation: flicker 2.5s infinite alternate;
+  position: relative;
 }
 
 .neon-subtitle {
-  color: #b5eaff;
+  color: #ddd;
   font-size: 1.2em;
-  text-shadow: 0 0 4px #0ff;
+  margin-bottom: 40px;
 }
 
-.demo {
+/* Effet glitch doux */
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #ff00ff;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  color: #00ffff;
+  animation-delay: 1.5s;
+}
+
+/* Animation du glitch */
+@keyframes glitch {
+  0% { clip: rect(10px, 9999px, 20px, 0); transform: skew(0.2deg); }
+  20% { clip: rect(60px, 9999px, 70px, 0); transform: skew(0.5deg); }
+  40% { clip: rect(30px, 9999px, 40px, 0); transform: skew(0.3deg); }
+  60% { clip: rect(80px, 9999px, 90px, 0); transform: skew(0.4deg); }
+  80% { clip: rect(50px, 9999px, 60px, 0); transform: skew(0.2deg); }
+  100% { clip: rect(0, 9999px, 10px, 0); transform: skew(0deg); }
+}
+
+/* Animation flicker (clignotement doux) */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
+}
+
+/* Cartes de présentation */
+.projects {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin: 40px 0;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
 .card {
-  background: rgba(0,255,255,0.05);
-  margin: 15px;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.3);
   border-radius: 20px;
-  width: 200px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 25px;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  animation: fadeIn 2s ease forwards;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #0ff, 0 0 25px #f0f;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #0ff, 0 0 40px #f0f;
+}
+
+/* Apparition douce */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  padding: 15px;
+  background: rgba(0,0,0,0.4);
+  border-top: 1px solid rgba(0,255,255,0.2);
+  font-size: 0.9em;
+  color: #aaa;
 }
