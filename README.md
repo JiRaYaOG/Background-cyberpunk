@@ -1,7 +1,7 @@
 # 🌌 Background Cyberpunk
 
 Bienvenue dans **Background Cyberpunk**, une expérience visuelle immersive mêlant **esthétique futuriste**, **effets néon** et **fond animé réactif**.  
-Ce projet illustre comment créer une ambiance cyberpunk élégante uniquement avec **HTML, CSS et JavaScript**.
+Ce projet illustre comment créer une ambiance cyberpunk élégante avec **HTML, CSS et JavaScript**.
 
 🔗 **Démo en ligne :** [https://jirayaog.github.io/Background-cyberpunk/](https://jirayaog.github.io/Background-cyberpunk/)
 
